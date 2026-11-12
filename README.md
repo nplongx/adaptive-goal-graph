@@ -26,7 +26,7 @@ Use this repository as a standalone Cargo dependency:
 
 ```toml
 [dependencies]
-adaptive-goal-graph = { git = "https://github.com/nplongx/adaptive-goal-graph", tag = "v0.2.0" }
+adaptive-goal-graph = { git = "https://github.com/nplongx/adaptive-goal-graph", tag = "v0.2.1" }
 ```
 
 All required domain and protocol source is included under `vendor/`, with original license files and immutable source revisions recorded beside each copy. The build uses local path dependencies only; it does not fetch sibling packages or require a parent workspace.
