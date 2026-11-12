@@ -18,7 +18,7 @@ serde_json = { version = "=1.0.151", features = ["float_roundtrip", "unbounded_d
 sha2 = "=0.10.9"
 thiserror = "=2.0.20"
 workflow-domain = { version = "=0.2.0", path = "vendor/workflow-domain" }
-protocol-contracts = { version = "=0.1.1", path = "vendor/protocol-contracts" }
+protocol-contracts = { version = "=0.2.0", path = "vendor/protocol-contracts" }
 
 [lints.rust]
 unsafe_code = "forbid"
