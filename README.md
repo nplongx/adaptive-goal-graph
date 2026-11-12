@@ -4,6 +4,10 @@ A Rust library for bounded, deterministic **shadow planning** over Adaptive Goal
 
 The crate is deliberately non-authorizing. It ranks candidate paths and validates supplied evidence metadata/bytes; it does not verify claim truth, approve a workflow, create an executable plan, or dispatch work.
 
+## Terminology
+
+See [TERMINOLOGY.md](TERMINOLOGY.md) for shared identifier, lifecycle, evidence, time-unit, and compatibility conventions.
+
 ## Capabilities
 
 - Validate bounded typed graphs, stable identities, constraints, and acyclic nominal transitions.
