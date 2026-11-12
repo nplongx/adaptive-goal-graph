@@ -22,19 +22,16 @@ See [TERMINOLOGY.md](TERMINOLOGY.md) for shared identifier, lifecycle, evidence,
 
 ## Install / dependency source
 
-This repository pins two public sibling crates by immutable Git revision:
-
-- [`workflow-domain`](https://github.com/nplongx/workflow-domain) at `c2460e8459b3a8db9def6d13320adc6f7cc4d2f9`;
-- [`protocol-contracts`](https://github.com/nplongx/protocol-contracts) at `6dc2e11bed7fa74bb5e508933eed34e17afd2cac`.
-
-Use the normal Cargo dependency declaration:
+Use this repository as a standalone Cargo dependency:
 
 ```toml
 [dependencies]
-adaptive-goal-graph = { git = "https://github.com/nplongx/adaptive-goal-graph", tag = "v0.1.0" }
+adaptive-goal-graph = { git = "https://github.com/nplongx/adaptive-goal-graph", tag = "v0.2.0" }
 ```
 
-The two dependency revisions are pinned in this repository's `Cargo.toml` and `Cargo.lock`; consumers do not need the original Runalith workspace. The sibling crates are currently Git-hosted, not published on crates.io, so this package is intended for Git-based Cargo consumption. A crates.io release requires those dependencies to be published there first.
+All required domain and protocol source is included under `vendor/`, with original license files and immutable source revisions recorded beside each copy. The build uses local path dependencies only; it does not fetch sibling packages or require a parent workspace.
+
+Crates.io publication is disabled because the package intentionally resolves these components from local vendored paths. Consume it as a Git dependency.
 
 ## Quick start
 
@@ -70,13 +67,13 @@ Default graph/search limits are intentionally conservative and enforced in code:
 
 ## Validation
 
-CI tests stable Rust and Rust 1.85 with formatting, dependency metadata resolution, unit tests, Clippy, and rustdoc. Cargo's crates.io packaging verifier is intentionally not used because both required sibling crates are currently Git-only. The unit suite includes Node-generated canonical graph/discriminator goldens, deterministic search, strict schema rejection, evidence manifest coverage and byte binding, authenticated source metadata checks, checkpoint continuity, exact attestation binding, and nonce replay rejection.
+CI tests stable Rust and Rust 1.85 with formatting, dependency metadata resolution, unit tests, Clippy, and rustdoc. The package is self-contained, but its vendored path dependencies have not been separately released to a package registry. The unit suite includes Node-generated canonical graph/discriminator goldens, deterministic search, strict schema rejection, evidence manifest coverage and byte binding, authenticated source metadata checks, checkpoint continuity, exact attestation binding, and nonce replay rejection.
 
 Passing local tests does not verify any external authority, production identity provider, provider execution, deployed source resolver, persistent host transition gate, or real checkpoint service. Integrators must provide and independently operate those systems.
 
 ## Source lineage
 
-Extracted from `runalith-agg` in [`nplongx/runalith`](https://github.com/nplongx/runalith), source revision `29c24cfa2b6ead5704d26cf2746bc384f2938b80`. Package metadata and dependency imports were adapted to the independent `workflow-domain` and `protocol-contracts` repositories. No Runalith runtime, store, worker, provider, MCP, or sandbox crate is included.
+Created from immutable source snapshot `29c24cfa2b6ead5704d26cf2746bc384f2938b80`. Required contract source is vendored locally; no application runtime, store, worker, provider, MCP, or sandbox module is required.
 
 ## License
 

@@ -1,9 +1,10 @@
 [package]
 name = "adaptive-goal-graph"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 rust-version = "1.85"
 license = "MIT"
+publish = false
 description = "Bounded, deterministic shadow planning and evidence-integrity contracts for adaptive goal graphs"
 readme = "README.md"
 repository = "https://github.com/nplongx/adaptive-goal-graph"
@@ -16,8 +17,8 @@ serde = { version = "=1.0.228", features = ["derive"] }
 serde_json = { version = "=1.0.151", features = ["float_roundtrip", "unbounded_depth"] }
 sha2 = "=0.10.9"
 thiserror = "=2.0.20"
-workflow-domain = { version = "0.1.0", git = "https://github.com/nplongx/workflow-domain", rev = "c2460e8459b3a8db9def6d13320adc6f7cc4d2f9" }
-protocol-contracts = { version = "0.1.0", git = "https://github.com/nplongx/protocol-contracts", rev = "6dc2e11bed7fa74bb5e508933eed34e17afd2cac" }
+workflow-domain = { version = "=0.2.0", path = "vendor/workflow-domain" }
+protocol-contracts = { version = "=0.1.1", path = "vendor/protocol-contracts" }
 
 [lints.rust]
 unsafe_code = "forbid"

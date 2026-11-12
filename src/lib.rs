@@ -11,6 +11,9 @@ use sha2::{Digest, Sha256};
 use thiserror::Error;
 use workflow_domain::{GraphEdge, GraphEdgeKind, GraphNodeRevision};
 
+pub use protocol_contracts as contracts;
+pub use workflow_domain as domain;
+
 pub mod custody;
 pub mod discriminator;
 pub mod evidence_integrity;

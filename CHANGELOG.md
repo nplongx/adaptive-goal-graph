@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0
+## 0.2.0
 
-- Initial standalone Adaptive Goal Graph shadow planner and evidence/custody contract library.
-- Pins independent workflow-domain and protocol-contracts Git revisions.
+- Vendor all required contract source locally; remove sibling Git dependencies.
+- Re-export local domain and protocol contract namespaces.

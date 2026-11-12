@@ -1,0 +1,23 @@
+[package]
+name = "workflow-domain"
+version = "0.2.0"
+edition = "2024"
+rust-version = "1.85"
+license = "MIT"
+description = "Pure Rust workflow domain types, validation, and immutable plan compilation"
+keywords = ["workflow", "domain-model", "dag", "orchestration"]
+categories = ["development-tools", "data-structures"]
+
+[dependencies]
+serde = { version = "=1.0.228", features = ["derive"] }
+serde_json = { version = "=1.0.151", features = ["float_roundtrip", "unbounded_depth"] }
+sha2 = "=0.10.9"
+hex = "=0.4.3"
+thiserror = "=2.0.20"
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"
+
+[lints.clippy]
+all = "warn"
